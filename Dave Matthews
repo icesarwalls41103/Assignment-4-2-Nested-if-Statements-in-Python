@@ -1,0 +1,28 @@
+# Hardcoded input values for non-interactive environments
+employee_name = "Dave Matthews"
+shifts = 1
+transactions = 1
+transaction_value = 200.00
+
+# Calculate productivity score
+if transactions > 0 and shifts > 0:
+    average_value = transaction_value / transactions
+    productivity_score = average_value / shifts
+
+    # Determine bonus using nested if statements
+    if productivity_score <= 30:
+        bonus = 50.0
+    else:
+        if productivity_score <= 69:
+            bonus = 75.0
+        else:
+            if productivity_score <= 199:
+                bonus = 100.0
+            else:
+                bonus = 200.0
+else:
+    bonus = 0.0  # Invalid inputs for transactions or shifts
+
+# Display output
+print("\nEmployee Name:", employee_name)
+print("Employee Bonus: $" + str(bonus))
